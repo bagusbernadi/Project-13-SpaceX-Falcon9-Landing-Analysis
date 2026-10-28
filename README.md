@@ -2,7 +2,9 @@
 
 # Project 13: SpaceX Falcon 9 Landing Analysis
 
-**Status: Design (rancangan).** Halaman rancangan ada di [`index.html`](index.html). Analisis, dashboard, dan angka hasil belum dikerjakan, sehingga bagian Analysis, Recommendation, dan Impact di bawah masih kosong.
+**Status: Pengerjaan sebagian (WIP, branch `project-13-build`).** Data: hanya tabel Wikipedia 2025 sampai 27 Okt 2026; SpaceX API belum tersedia; halaman Wikipedia 2010 sampai 2024 belum ada.
+
+**Status awal: Design (rancangan).** Halaman rancangan ada di [`index.html`](index.html). Analisis, dashboard, dan angka hasil belum dikerjakan, sehingga bagian Analysis, Recommendation, dan Impact di bawah masih kosong.
 
 **Tujuan:** membangun pipeline data dan dashboard dari data publik peluncuran Falcon 9 yang menunjukkan faktor misi yang paling terkait dengan keberhasilan landing first stage, beserta estimasi nilai reuse-nya.
 
@@ -57,6 +59,22 @@ Nilai reuse = landing sukses × biaya booster (asumsi US$40 juta, label estimate
 - Faktor saling terkait (tahun, versi, reuse).
 - Jumlah data kecil per kelompok.
 - SpaceX API dikelola komunitas dan berhenti diperbarui.
+
+## Status pengerjaan (WIP)
+
+| Item | Status |
+|---|---|
+| Parsing tabel Wikipedia (`src/scrape_wiki.py`) | selesai: 282 peluncuran unik (flight 418 sampai 699, 4 Jan 2025 sampai 27 Okt 2026), log di `outputs/cleaning_log.csv` |
+| SpaceX API (`src/ingest_api.py`) | belum: API mengembalikan error 525 (28 Okt 2026) |
+| Wikipedia 2010 sampai 2024 | belum: halaman terpisah (2010–2019, 2020–2022, 2023, 2024) belum diunduh |
+| DuckDB, SQL, dashboard, notebook | belum |
+
+Temuan awal, hanya data 2025 sampai 2026 (282 misi, semua F9 B5, 279 percobaan landing):
+
+- Landing sukses 278 dari 279 percobaan (99,6%). ASDS 245 dari 246; RTLS 33 dari 33 (100%). Satu kegagalan: flight 443 (JRTI).
+- GTO 7 dari 10 landing berhasil (70%). Jumlah kecil, CI 95% lebar. Belum bisa disimpulkan.
+- Hipotesis 1 (kenaikan sejak 2016) belum bisa diuji: data belum mencakup 2010 sampai 2024.
+- Hipotesis 5 (RTLS lebih sering berhasil): RTLS 33 dari 33, ASDS 245 dari 246. Selisih 1 kegagalan, tidak bermakna.
 
 ## Struktur repository
 
