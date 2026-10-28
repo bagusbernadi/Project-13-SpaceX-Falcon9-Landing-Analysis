@@ -26,7 +26,7 @@ Rancangan memecahnya menjadi 14 pertanyaan (9 Utama, 4 Pendukung, 1 Tambahan) da
 - Ukuran (perkiraan, **belum diverifikasi**): ±200 peluncuran Falcon 9, 2010 sampai ±2022.
 - Memperbarui repo capstone lama (notebook kursus) menjadi pipeline .py.
 - Rencana tabel: `launches`, `boosters`, `dim_site`, `launches_wiki`.
-- Lisensi dan sitasi: dicek di halaman sumber sebelum project dipublikasikan.
+- Lisensi: SpaceX API (repo r-spacex/SpaceX-API) berlisensi Apache-2.0 untuk kodenya, lisensi isi datanya tidak dinyatakan terpisah; per 28 Oktober 2026 server API tidak bisa diakses (error 525). Wikipedia "List of Falcon 9 and Falcon Heavy launches" (revisi 1382396504, 28 Oktober 2026): CC BY-SA 4.0, wajib atribusi dan karya turunan berlisensi sama.
 - Data mentah tidak di-commit ke repository.
 
 ## 3. Analysis
